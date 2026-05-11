@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LOCAL : YEO-JU</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #0a0a0a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-accent: #C9A87C;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--color-black);
+            color: var(--color-white);
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        /* Custom Cursor */
+        .cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--color-river);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease, opacity 0.3s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-river);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.08s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 40px;
+            overflow: hidden;
+        }
+        
+        /* Background Pattern */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(0deg, transparent 24%, rgba(74, 124, 140, .05) 25%, rgba(74, 124, 140, .05) 26%, transparent 27%, transparent 74%, rgba(74, 124, 140, .05) 75%, rgba(74, 124, 140, .05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(74, 124, 140, .05) 25%, rgba(74, 124, 140, .05) 26%, transparent 27%, transparent 74%, rgba(74, 124, 140, .05) 75%, rgba(74, 124, 140, .05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        /* Gradient Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            pointer-events: none;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--color-river);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+        
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--color-accent);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 30px) scale(0.9); }
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1200px;
+        }
+        
+        .label {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 6px;
+            color: var(--color-river);
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(80px, 15vw, 180px);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-white) 0%, var(--color-river) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+        
+        .subtitle {
+            font-size: clamp(18px, 3vw, 32px);
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--color-accent);
+            margin-bottom: 80px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+        }
+        
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1s forwards;
+        }
+        
+        .btn {
+            position: relative;
+            padding: 25px 50px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--color-white);
+            background: transparent;
+            border: 2px solid var(--color-river);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--color-river);
+            transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(74, 124, 140, 0.4);
+        }
+        
+        .btn-instagram {
+            border-color: #E1306C;
+        }
+        
+        .btn-instagram::before {
+            background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+        }
+        
+        .btn-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-river);
+            font-size: 11px;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards, bounce 2s ease-in-out 2s infinite;
+        }
+        
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, var(--color-river));
+        }
+        
+        /* Info Section */
+        .info-section {
+            padding: 100px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-black) 0%, #0f0f0f 100%);
+        }
+        
+        .info-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--color-river);
+        }
+        
+        .info-text {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+        
+        .info-highlight {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: var(--color-accent);
+            margin-top: 60px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, 10px); }
+        }
+        
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+            
+            .cursor, .cursor-dot {
+                display: none;
+            }
+            
+            .hero {
+                padding: 20px;
+            }
+            
+            .label {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+            
+            .subtitle {
+                letter-spacing: 4px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 20px 40px;
+            }
+            
+            .info-section {
+                padding: 60px 20px;
+            }
+            
+            .info-text {
+                font-size: 16px;
+            }
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 480px) {
+            .tagline {
+                font-size: 13px;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <div class="label">THE LOCAL</div>
+            <h1 class="main-title">YEO-JU</h1>
+            <div class="subtitle">여주</div>
+            <div class="tagline">로컬을 기록하다 — Recording Local Stories</div>
+            
+            <!-- Buttons -->
+            <div class="buttons">
+                <a href="https://instagram.com/yeoju_magazine" class="btn btn-instagram" target="_blank">
+                    <span class="btn-icon">📷</span>
+                    INSTAGRAM
+                </a>
+                <a href="./index-final.html" class="btn">
+                    <span class="btn-icon">📖</span>
+                    READ MAGAZINE
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
+    
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="info-content">
+            <h2 class="info-title">Vol. 01 / Summer 2026</h2>
+            <p class="info-text">
+                여주의 여름 이야기를 담습니다.<br>
+                5월부터 8월까지, 계속해서 업데이트됩니다.
+            </p>
+            <p class="info-text">
+                여주에서 일어나는 작은 변화들,<br>
+                이곳을 지키는 사람들,<br>
+                그들이 만들어가는 풍경들.
+            </p>
+            <div class="info-highlight">
+                May — August 2026<br>
+                Living Edition
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = (e.clientX - 4) + 'px';
+            cursorDot.style.top = (e.clientY - 4) + 'px';
+        });
+        
+        // Cursor hover effect
+        const links = document.querySelectorAll('a, .btn');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.borderColor = 'var(--color-accent)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.borderColor = 'var(--color-river)';
+            });
+        });
+        
+        // Parallax effect on orbs
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.orb');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            orbs.forEach((orb, index) => {
+                const speed = (index + 1) * 20;
+                orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+        
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.info-section > *').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
