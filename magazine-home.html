@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LOCAL : YEO-JU — Vol. 01 / Summer 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-warm-gray: #8B8376;
+            
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-modern);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        
+        /* Header */
+        header {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 5px solid var(--color-river);
+        }
+        
+        .header-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: var(--color-river);
+        }
+        
+        .header-title {
+            font-family: var(--font-display);
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .header-subtitle {
+            font-size: clamp(18px, 3vw, 28px);
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .header-info {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Section */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-black);
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: var(--color-warm-gray);
+            margin-bottom: 60px;
+        }
+        
+        /* Featured Article */
+        .featured {
+            background: var(--color-ivory);
+        }
+        
+        .featured-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 500px;
+            background: var(--color-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            border: 1px solid var(--color-beige);
+        }
+        
+        .featured-content {
+            padding: 40px;
+        }
+        
+        .featured-category {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-river);
+            margin-bottom: 20px;
+        }
+        
+        .featured-title {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .featured-excerpt {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--color-warm-gray);
+            margin-bottom: 30px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--color-black);
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: background 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background: var(--color-river);
+        }
+        
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .article-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 280px;
+            background: var(--color-ivory);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--color-warm-gray);
+            border: 1px solid var(--color-beige);
+            margin-bottom: 20px;
+        }
+        
+        .article-category {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--color-river);
+            margin-bottom: 15px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+        
+        .article-excerpt {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Category Section */
+        .category-section {
+            margin-bottom: 80px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--color-beige);
+        }
+        
+        .category-title {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-river);
+        }
+        
+        .category-count {
+            margin-left: 20px;
+            font-size: 14px;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-info {
+            font-size: 14px;
+            line-height: 2;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-label">THE LOCAL</div>
+        <h1 class="header-title">YEO-JU</h1>
+        <div class="header-subtitle">여주</div>
+        <div class="header-info">Vol. 01 / Summer 2026 — 로컬을 기록하다</div>
+    </header>
+    
+    <!-- Featured Article -->
+    <section class="featured">
+        <div class="container">
+            <a href="./articles/phone-museum.html" class="featured-card">
+                <div class="featured-image">[여주 시립 폰박물관 — 거대한 휴대폰 조형물]</div>
+                <div class="featured-content">
+                    <div class="featured-category">PLACE — 여주 탐방</div>
+                    <h2 class="featured-title">여주 시립<br>폰박물관</h2>
+                    <p class="featured-excerpt">
+                        박물관 입구에서 가장 먼저 눈에 들어오는 건 건물 높이만 한 거대한 LG 휴대폰과 민트색 공중전화 부스다. 불과 20년 전인데, 이미 "박물관"에 전시될 만큼 낡은 것이 되었다.
+                    </p>
+                    <span class="read-more">READ MORE →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Latest Stories -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Latest Stories</h2>
+            <p class="section-subtitle">여주의 여름 이야기</p>
+            
+            <div class="articles-grid">
+                <!-- Summer Guide -->
+                <a href="./articles/summer-guide.html" class="article-card">
+                    <div class="article-image">[여주 여름 풍경 — 남한강]</div>
+                    <div class="article-category">GUIDE</div>
+                    <h3 class="article-title">Summer Guide</h3>
+                    <p class="article-excerpt">6-8월 여주 캘린더. 조용하지만 그래서 더 좋은 여주의 여름.</p>
+                </a>
+                
+                <!-- 창간사 -->
+                <a href="./articles/opening-statement.html" class="article-card">
+                    <div class="article-image">[여주 풍경 — 도자기마을]</div>
+                    <div class="article-category">INTRO</div>
+                    <h3 class="article-title">여주를 기록하다</h3>
+                    <p class="article-excerpt">THE LOCAL : YEO-JU의 첫 번째 이야기를 시작합니다.</p>
+                </a>
+                
+                <!-- Editor's Note -->
+                <a href="./articles/editors-note.html" class="article-card">
+                    <div class="article-image">[편집팀]</div>
+                    <div class="article-category">NOTE</div>
+                    <h3 class="article-title">첫 발행을 마치며</h3>
+                    <p class="article-excerpt">완벽하지 않지만, 진심을 담았습니다.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- All Articles by Category -->
+    <section style="background: var(--color-ivory);">
+        <div class="container">
+            <h2 class="section-title">All Stories</h2>
+            <p class="section-subtitle">카테고리별 전체 기사</p>
+            
+            <!-- PLACE -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h3 class="category-title">PLACE — 여주 탐방</h3>
+                    <span class="category-count">1 article</span>
+                </div>
+                <div class="articles-grid">
+                    <a href="./articles/phone-museum.html" class="article-card">
+                        <div class="article-image">[폰박물관]</div>
+                        <div class="article-category">PLACE</div>
+                        <h3 class="article-title">여주 시립 폰박물관</h3>
+                        <p class="article-excerpt">전화기로 기억하는 시간</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- GUIDE -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h3 class="category-title">GUIDE — 가이드</h3>
+                    <span class="category-count">1 article</span>
+                </div>
+                <div class="articles-grid">
+                    <a href="./articles/summer-guide.html" class="article-card">
+                        <div class="article-image">[여름 가이드]</div>
+                        <div class="article-category">GUIDE</div>
+                        <h3 class="article-title">Summer Guide: 6-8월 여주 캘린더</h3>
+                        <p class="article-excerpt">여주의 여름은 조용하다. 하지만 그래서 더 좋다.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- COMING SOON -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h3 class="category-title">COMING SOON — 준비 중</h3>
+                    <span class="category-count">3 articles</span>
+                </div>
+                <div class="articles-grid">
+                    <div class="article-card" style="opacity: 0.5; pointer-events: none;">
+                        <div class="article-image">[커버스토리]</div>
+                        <div class="article-category">COVER</div>
+                        <h3 class="article-title">여름, 여주의 물가에서</h3>
+                        <p class="article-excerpt">Coming Soon</p>
+                    </div>
+                    
+                    <div class="article-card" style="opacity: 0.5; pointer-events: none;">
+                        <div class="article-image">[인물 인터뷰]</div>
+                        <div class="article-category">PEOPLE</div>
+                        <h3 class="article-title">여주에서 10년</h3>
+                        <p class="article-excerpt">Coming Soon</p>
+                    </div>
+                    
+                    <div class="article-card" style="opacity: 0.5; pointer-events: none;">
+                        <div class="article-image">[맛집]</div>
+                        <div class="article-category">FOOD</div>
+                        <h3 class="article-title">여름밤을 시원하게</h3>
+                        <p class="article-excerpt">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">THE LOCAL : YEO-JU</div>
+            <div class="footer-info">
+                Vol. 01 / Summer 2026<br>
+                May — August 2026 / Living Edition<br>
+                <br>
+                Contact: yeoju.magazine@gmail.com<br>
+                Instagram: @yeoju_magazine<br>
+                <br>
+                © 2026 THE LOCAL : YEO-JU. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

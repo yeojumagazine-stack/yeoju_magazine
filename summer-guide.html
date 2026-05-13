@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Guide: 6-8월 여주 캘린더 — THE LOCAL : YEO-JU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-green: #6B8E6F;
+            --color-ochre: #C9A87C;
+            --color-warm-gray: #8B8376;
+            
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-korean);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-beige);
+            z-index: 1000;
+            padding: 20px 40px;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-modern);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--color-black);
+        }
+        
+        .nav-back {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--color-warm-gray);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-back:hover {
+            color: var(--color-river);
+        }
+        
+        /* Article Header */
+        .article-header {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 40px;
+        }
+        
+        .article-category {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-green);
+            margin-bottom: 30px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .article-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--color-warm-gray);
+            margin-bottom: 40px;
+        }
+        
+        .article-meta {
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            padding-top: 30px;
+            border-top: 1px solid var(--color-beige);
+        }
+        
+        /* Article Content */
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
+        }
+        
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            margin: 60px 0 30px;
+        }
+        
+        .article-content h4 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 25px;
+        }
+        
+        .article-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: var(--color-ivory);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            border: 1px solid var(--color-beige);
+            margin: 40px 0;
+        }
+        
+        .info-box {
+            background: var(--color-ivory);
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 4px solid var(--color-green);
+        }
+        
+        .info-box strong {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--color-ivory) 0%, var(--color-beige) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .highlight-text {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-number {
+            font-family: var(--font-display);
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--color-green);
+            margin: 20px 0;
+        }
+        
+        .course-box {
+            background: var(--color-white);
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--color-beige);
+            white-space: pre-line;
+            font-family: monospace;
+            line-height: 2;
+        }
+        
+        .course-label {
+            display: inline-block;
+            background: var(--color-green);
+            color: var(--color-white);
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: var(--color-green);
+            margin: 60px auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav {
+            margin: 40px 0;
+        }
+        
+        .footer-nav a {
+            color: var(--color-warm-gray);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--color-river);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .article-header,
+            .article-content {
+                padding: 0 20px;
+            }
+            
+            .article-header {
+                margin: 100px auto 40px;
+            }
+            
+            .article-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="../magazine-home.html" class="nav-logo">THE LOCAL : YEO-JU</a>
+            <a href="../magazine-home.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+    
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="article-category">GUIDE — 여름 가이드</div>
+        <h1 class="article-title">Summer<br>Guide</h1>
+        <p class="article-subtitle">6-8월 여주 캘린더</p>
+        <div class="article-meta">
+            THE LOCAL : YEO-JU 편집팀 · 최종 업데이트: 2026년 5월
+        </div>
+    </div>
+    
+    <!-- Article Content -->
+    <div class="article-content">
+        <div class="highlight-box">
+            <div class="highlight-text">여주의 여름은</div>
+            <div class="highlight-number">조용하다</div>
+            <div class="highlight-text">하지만 그래서 더 좋다</div>
+        </div>
+        
+        <p>봄의 도자기축제, 가을의 오곡나루축제처럼 북적이는 대형 행사는 없다. 하지만 그래서 더 좋다. 여름의 여주는 남한강과 자연을 온전히 누릴 수 있는 계절이다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3 style="color: var(--color-river);">📅 6월</h3>
+        
+        <h4>여주 남한강 출렁다리 〈여기 여주 마켓〉</h4>
+        
+        <div class="info-box">
+            <strong>기본 정보</strong>
+            📍 남한강 출렁다리 북단<br>
+            📅 3월 28일 ~ 6월 28일 (매주 토-일)<br>
+            🕐 주말 운영<br>
+            🎫 무료 입장
+        </div>
+        
+        <div class="article-image">[출렁다리 마켓 현장]</div>
+        
+        <p>남한강 출렁다리 북단에서 매주 주말 열리는 로컬 마켓. 여주 지역 작가들의 공예품, 디저트, 먹거리를 만날 수 있다. 출렁다리 건너기 + 마켓 구경을 함께 즐기기 좋은 코스.</p>
+        
+        <p><strong>추천:</strong> 주말 오전 11시~오후 2시 방문, 점심 겸 마켓 구경</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h4>슬로우 캠핑 강천섬</h4>
+        
+        <div class="info-box">
+            <strong>기본 정보</strong>
+            📍 강천섬 캠핑장 및 강천섬 일원<br>
+            📅 5월 16일 ~ 6월 6일<br>
+            🎫 프로그램별 상이 (사전 예약 필요)
+        </div>
+        
+        <div class="article-image">[강천섬 캠핑장]</div>
+        
+        <p>남한강 한가운데 위치한 강천섬에서 진행되는 캠핑 프로그램. 섬 전체가 캠핑장이라는 독특함. 여름 시즌 전 마지막 프로그램이니 놓치지 말 것.</p>
+        
+        <h4>전시 & 문화 프로그램</h4>
+        
+        <div class="info-box">
+            <strong>아트뮤지엄 려</strong><br>
+            임영신 개인전 '시간을 바라보다' (6월 일부)<br>
+            유아 대상 교육 〈생각이 말랑말랑, 미술관 나들이〉<br>
+            <br>
+            <strong>폰박물관</strong><br>
+            디지털 문화교육 (AI 숏폼, 스마트폰 사진 등)<br>
+            유아체험 〈전화기야, 안녕?〉<br>
+            <br>
+            <strong>도자기 관련</strong><br>
+            〈도자기 숲의 작은 친구들〉 전시<br>
+            여주 군고구마빵 '여고빵' 도자기 축제장 판매 (연중)
+        </div>
+        
+        <div class="decorative-line"></div>
+        
+        <h3 style="color: var(--color-green);">📅 7월</h3>
+        
+        <p style="font-size: 19px; font-weight: 500; color: var(--color-green); margin-bottom: 30px;">7월의 여주는 <strong>여름 자연</strong>이 주인공이다.</p>
+        
+        <p>대형 축제는 없지만, 남한강을 따라 걷고, 자전거를 타고, 물가에서 쉬어가기에 가장 좋은 계절. 북적이지 않은 여주의 매력을 온전히 느낄 수 있다.</p>
+        
+        <h4>추천 장소</h4>
+        
+        <div class="info-box">
+            <strong>남한강 자전거길</strong><br>
+            📍 여주보 ~ 이포보 구간<br>
+            🚴 약 15km (왕복 3시간)<br>
+            🌿 강바람이 시원한 오전/저녁 추천<br>
+            <br>
+            <strong>여강길 도보여행</strong><br>
+            📍 여주시 전역 (총 100km, 구간별 선택 가능)<br>
+            👟 2-3시간 코스 추천<br>
+            🗺 여강길 3코스 (신륵사~세종대왕릉) 인기<br>
+            <br>
+            <strong>금은모래강변공원</strong><br>
+            📍 여주시 천송동<br>
+            🏖 강변 산책, 물놀이<br>
+            🌅 석양 명소
+        </div>
+        
+        <div class="decorative-line"></div>
+        
+        <h3 style="color: var(--color-ochre);">📅 8월</h3>
+        
+        <p style="font-size: 19px; font-weight: 500; color: var(--color-ochre); margin-bottom: 30px;">8월의 여주는 <strong>여유</strong>다.</p>
+        
+        <p>관광객이 붐비지 않는 8월, 여주는 조용히 자신의 리듬을 유지한다. 이맘때가 오히려 좋다는 단골들의 말처럼, 여주의 진짜 모습을 만나기 좋은 시기.</p>
+        
+        <h4>추천 체험</h4>
+        
+        <div class="info-box">
+            <strong>황포돛배</strong><br>
+            📍 신륵사 선착장<br>
+            ⛵ 조선시대 전통 배 체험<br>
+            🕐 운행 시간 확인 필요<br>
+            <br>
+            <strong>황학산수목원</strong><br>
+            📍 여주시 능서면<br>
+            🌳 여름 녹음, 산림욕<br>
+            🌡 시원한 숲길<br>
+            <br>
+            <strong>여주 9경 투어</strong><br>
+            📍 여주시 전역<br>
+            📷 특히 제8경 '파사과우' (여름 소나기 명소)<br>
+            🗺 여주마블 스탬프투어 활용 (연중 운영)
+        </div>
+        
+        <div class="decorative-line"></div>
+        
+        <h3 style="color: var(--color-river);">🌿 여름 추천 코스</h3>
+        
+        <h4>코스 1: 강변 힐링 (반나절)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 01</span>
+09:00  세종대왕릉 산책로
+       시원한 아침, 강바람
+
+11:00  신륵사 강변
+       나무 그늘 아래 휴식
+
+13:00  황포돛배 탑승 (선택)
+       또는 강변 카페에서 점심
+
+추천 대상: 여유로운 산책
+소요 시간: 4시간
+</div>
+        
+        <h4>코스 2: 자전거 라이딩 (오전)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 02</span>
+08:00  여주보 대여소
+       자전거 대여
+
+08:30  남한강 자전거길
+       여주보 → 이포보 (15km)
+
+11:00  이포보에서 휴식
+       강변 벤치, 편의점
+
+12:00  귀환 후 점심
+
+추천 대상: 액티비티 좋아하는 분
+소요 시간: 4시간
+난이도: 쉬움
+</div>
+        
+        <h4>코스 3: 출렁다리 & 마켓 (주말, 6월)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 03</span>
+10:00  출렁다리 마켓 도착
+       (6월 주말만 운영)
+
+10:30  마켓 구경
+       로컬 작가 공예품, 디저트
+
+12:00  출렁다리 건너기
+       강 위를 걷는 경험
+
+13:00  근처 맛집에서 점심
+       여주쌀밥 추천
+
+추천 대상: 가족, 커플
+소요 시간: 3-4시간
+</div>
+        
+        <h4>코스 4: 문화 투어 (하루)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 04</span>
+10:00  아트뮤지엄 려
+       전시 관람
+
+12:00  점심
+
+14:00  폰박물관
+       전화기 역사 체험
+
+16:00  도자기 관련 장소
+       (여주도자세상 또는 공방)
+
+18:00  신륵사 석양
+
+추천 대상: 문화/예술 관심 있는 분
+소요 시간: 8시간
+</div>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>💡 여름 여주 여행 팁</h3>
+        
+        <div class="info-box">
+            <strong>피서 전략</strong><br>
+            • 한낮 (12-15시)은 피하고 아침/저녁 활용<br>
+            • 강변은 언제나 시원함<br>
+            • 실내 박물관/미술관 더위 피하기 좋음<br>
+            <br>
+            <strong>이동</strong><br>
+            • 자전거 대여: 여주보, 이포보<br>
+            • 주차: 주요 관광지 무료 주차장 多<br>
+            • 대중교통: 여주역 기점, 시내버스 이용<br>
+            <br>
+            <strong>준비물</strong><br>
+            • 선크림, 모자, 선글라스<br>
+            • 물병 (자전거길엔 편의점 적음)<br>
+            • 간편한 운동화<br>
+            <br>
+            <strong>먹거리</strong><br>
+            • 여주쌀밥 정식<br>
+            • 출렁다리 마켓 디저트 (6월 주말)<br>
+            • 강변 카페
+        </div>
+        
+        <p style="font-size: 14px; color: var(--color-warm-gray); margin-top: 60px;">
+            정보 출처: 여주세종문화관광재단 · THE LOCAL : YEO-JU 자체 취재<br>
+            최종 업데이트: 2026년 5월
+        </p>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">THE LOCAL : YEO-JU</div>
+            <div class="footer-nav">
+                <a href="../magazine-home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div style="font-size: 14px; color: var(--color-warm-gray); margin-top: 30px;">
+                Vol. 01 / Summer 2026<br>
+                © 2026 THE LOCAL : YEO-JU
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여주를 기록하다 — THE LOCAL : YEO-JU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-warm-gray: #8B8376;
+            
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-korean);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-ivory);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-beige);
+            z-index: 1000;
+            padding: 20px 40px;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-modern);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--color-black);
+        }
+        
+        .nav-back {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--color-warm-gray);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-back:hover {
+            color: var(--color-river);
+        }
+        
+        /* Article Header */
+        .article-header {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 40px;
+        }
+        
+        .article-category {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-river);
+            margin-bottom: 30px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .article-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--color-warm-gray);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .article-meta {
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            padding-top: 30px;
+            border-top: 1px solid var(--color-beige);
+        }
+        
+        /* Article Content */
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
+        }
+        
+        .article-content p {
+            font-size: 19px;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 500px;
+            background: var(--color-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            border: 1px solid var(--color-beige);
+            margin: 60px 0;
+        }
+        
+        .pull-quote {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: center;
+            color: var(--color-river);
+            margin: 80px 0;
+            padding: 60px 20px;
+            background: var(--color-white);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 60px 0;
+        }
+        
+        .tag {
+            font-size: 13px;
+            padding: 8px 16px;
+            background: var(--color-white);
+            color: var(--color-warm-gray);
+            border-radius: 20px;
+        }
+        
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: var(--color-river);
+            margin: 60px auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav {
+            margin: 40px 0;
+        }
+        
+        .footer-nav a {
+            color: var(--color-warm-gray);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--color-river);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .article-header,
+            .article-content {
+                padding: 0 20px;
+            }
+            
+            .article-header {
+                margin: 100px auto 40px;
+            }
+            
+            .article-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="../magazine-home.html" class="nav-logo">THE LOCAL : YEO-JU</a>
+            <a href="../magazine-home.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+    
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="article-category">INTRO — 창간사</div>
+        <h1 class="article-title">여주를<br>기록하다</h1>
+        <p class="article-subtitle">Recording Yeoju</p>
+        <div class="article-meta">
+            THE LOCAL : YEO-JU 편집팀 · 2026년 5월
+        </div>
+    </div>
+    
+    <!-- Article Content -->
+    <div class="article-content">
+        <div class="article-image">[여주 대표 이미지 — 남한강 또는 도자기마을]</div>
+        
+        <p>여주는 빠르게 변하고 있습니다.</p>
+        
+        <p>새로운 카페가 생기고, 젊은 예술가들이 모이고, 오래된 가게들은 새로운 세대에게 이어집니다. 관광객들은 늘어나고, 지역은 조금씩 새로운 모습을 갖춰갑니다.</p>
+        
+        <p>하지만 이 변화의 순간들은 쉽게 지나가버립니다. 기록하지 않으면, 기억하지 않으면, 사라져버립니다.</p>
+        
+        <div class="pull-quote">
+            "THE LOCAL : YEO-JU는<br>여주를 기록하려 합니다."
+        </div>
+        
+        <p>화려한 것보다 <strong>진실한 것</strong>을, 빠른 것보다 <strong>오래가는 것</strong>을 담아내고 싶습니다.</p>
+        
+        <p>여주에서 일어나는 크고 작은 이야기들, 여주를 만들어가는 사람들, 여주에서만 경험할 수 있는 순간들. 이 모든 것을 기록으로 남기겠습니다.</p>
+        
+        <div class="tags">
+            <span class="tag">#여주</span>
+            <span class="tag">#로컬매거진</span>
+            <span class="tag">#기록</span>
+            <span class="tag">#라이프스타일</span>
+        </div>
+        
+        <p>완벽하지 않을 수 있습니다. 하지만 진심을 담았습니다.</p>
+        
+        <p>여주를 사랑하는 마음으로, THE LOCAL : YEO-JU의 첫 번째 이야기를 시작합니다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <p style="text-align: center; margin-top: 60px; font-weight: 500;">THE LOCAL : YEO-JU 편집팀<br>2026년 5월</p>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">THE LOCAL : YEO-JU</div>
+            <div class="footer-nav">
+                <a href="../magazine-home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div style="font-size: 14px; color: var(--color-warm-gray); margin-top: 30px;">
+                Vol. 01 / Summer 2026<br>
+                © 2026 THE LOCAL : YEO-JU
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
