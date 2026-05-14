@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LOCAL : YEO-JU — Vol. 01 / Summer 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-warm-gray: #8B8376;
+            
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-modern);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        
+        /* Header */
+        header {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 5px solid var(--color-river);
+        }
+        
+        .header-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: var(--color-river);
+        }
+        
+        .header-title {
+            font-family: var(--font-display);
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .header-subtitle {
+            font-size: clamp(18px, 3vw, 28px);
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .header-info {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Header Tabs */
+        .header-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .header-tab {
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-family: var(--font-modern);
+        }
+        
+        .header-tab:hover {
+            border-bottom-color: var(--color-river);
+            color: var(--color-river);
+        }
+        
+        .header-tab.active {
+            border-bottom-color: var(--color-white);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Section */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-black);
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: var(--color-warm-gray);
+            margin-bottom: 60px;
+        }
+        
+        /* Featured Article */
+        .featured {
+            background: var(--color-ivory);
+        }
+        
+        .featured-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 500px;
+            background: var(--color-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            border: 1px solid var(--color-beige);
+        }
+        
+        .featured-content {
+            padding: 40px;
+        }
+        
+        .featured-category {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-river);
+            margin-bottom: 20px;
+        }
+        
+        .featured-title {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .featured-excerpt {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--color-warm-gray);
+            margin-bottom: 30px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--color-black);
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: background 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background: var(--color-river);
+        }
+        
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .article-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-card.coming-soon {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .article-card.hidden {
+            display: none;
+        }
+        
+        /* Tab Filter */
+        .tab-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 60px 0 40px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 12px 30px;
+            background: var(--color-white);
+            border: 2px solid var(--color-beige);
+            color: var(--color-warm-gray);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-modern);
+        }
+        
+        .tab:hover {
+            border-color: var(--color-river);
+            color: var(--color-river);
+        }
+        
+        .tab.active {
+            background: var(--color-black);
+            border-color: var(--color-black);
+            color: var(--color-white);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 280px;
+            background: var(--color-ivory);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--color-warm-gray);
+            border: 1px solid var(--color-beige);
+            margin-bottom: 20px;
+        }
+        
+        .article-category {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--color-river);
+            margin-bottom: 15px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+        
+        .article-excerpt {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Category Section */
+        .category-section {
+            margin-bottom: 80px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--color-beige);
+        }
+        
+        .category-title {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-river);
+        }
+        
+        .category-count {
+            margin-left: 20px;
+            font-size: 14px;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-info {
+            font-size: 14px;
+            line-height: 2;
+            color: var(--color-warm-gray);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .header-tabs {
+                gap: 10px;
+                margin-top: 30px;
+            }
+            
+            .header-tab {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-label">THE LOCAL</div>
+        <h1 class="header-title">YEO-JU</h1>
+        <div class="header-subtitle">여주</div>
+        <div class="header-info">Vol. 01 / Summer 2026 — 로컬을 기록하다</div>
+        
+        <!-- Header Tabs -->
+        <div class="header-tabs">
+            <a href="#opening" class="header-tab" data-category="intro">INTRO</a>
+            <a href="#stories" class="header-tab" data-category="cover">COVER</a>
+            <a href="#stories" class="header-tab" data-category="place">PLACE</a>
+            <a href="#stories" class="header-tab" data-category="people">PEOPLE</a>
+            <a href="#stories" class="header-tab" data-category="taste">TASTE</a>
+            <a href="#stories" class="header-tab" data-category="guide">GUIDE</a>
+            <a href="#stories" class="header-tab" data-category="note">NOTE</a>
+        </div>
+    </header>
+    
+    <!-- Opening Statement -->
+    <section id="opening" style="background: var(--color-ivory); padding: 100px 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <div style="font-size: 12px; font-weight: 600; letter-spacing: 4px; color: var(--color-river); margin-bottom: 20px;">INTRO — 창간사</div>
+                    <h2 style="font-family: var(--font-display); font-size: 56px; font-weight: 700; margin-bottom: 20px;">여주를<br>기록하다</h2>
+                    <p style="font-size: 18px; color: var(--color-warm-gray); font-style: italic;">Recording Yeoju</p>
+                </div>
+                
+                <div style="font-size: 18px; line-height: 2; color: var(--color-black);">
+                    <p style="margin-bottom: 30px;">여주는 빠르게 변하고 있습니다.</p>
+                    
+                    <p style="margin-bottom: 30px;">새로운 카페가 생기고, 젊은 예술가들이 모이고, 오래된 가게들은 새로운 세대에게 이어집니다. 관광객들은 늘어나고, 지역은 조금씩 새로운 모습을 갖춰갑니다.</p>
+                    
+                    <p style="margin-bottom: 30px;">하지만 이 변화의 순간들은 쉽게 지나가버립니다. 기록하지 않으면, 기억하지 않으면, 사라져버립니다.</p>
+                    
+                    <div style="font-family: var(--font-display); font-size: 28px; font-weight: 600; text-align: center; color: var(--color-river); margin: 60px 0; padding: 40px 20px; background: var(--color-white);">
+                        "THE LOCAL : YEO-JU는<br>여주를 기록하려 합니다."
+                    </div>
+                    
+                    <p style="margin-bottom: 30px;">화려한 것보다 <strong>진실한 것</strong>을, 빠른 것보다 <strong>오래가는 것</strong>을 담아내고 싶습니다.</p>
+                    
+                    <p style="margin-bottom: 30px;">완벽하지 않을 수 있습니다. 하지만 진심을 담았습니다.</p>
+                    
+                    <p style="margin-bottom: 30px;">여주를 사랑하는 마음으로, THE LOCAL : YEO-JU의 첫 번째 이야기를 시작합니다.</p>
+                    
+                    <div style="text-align: center; margin-top: 60px; font-weight: 500; color: var(--color-warm-gray);">
+                        THE LOCAL : YEO-JU 편집팀<br>2026년 5월
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tab Filter + Articles -->
+    <section id="stories" style="padding: 100px 0;">
+        <div class="container">
+            <h2 class="section-title">All Stories</h2>
+            <p class="section-subtitle">여주의 모든 이야기</p>
+            
+            <!-- Articles Grid -->
+            <div class="articles-grid">
+                <!-- 창간사 -->
+                <a href="./articles/opening-statement.html" class="article-card" data-category="intro">
+                    <div class="article-image">[여주 풍경]</div>
+                    <div class="article-category">INTRO — 창간사</div>
+                    <h3 class="article-title">여주를 기록하다</h3>
+                    <p class="article-excerpt">THE LOCAL : YEO-JU의 첫 번째 이야기를 시작합니다.</p>
+                </a>
+                
+                <!-- 폰박물관 -->
+                <a href="./articles/phone-museum.html" class="article-card" data-category="place">
+                    <div class="article-image">[폰박물관]</div>
+                    <div class="article-category">PLACE — 장소</div>
+                    <h3 class="article-title">여주 시립 폰박물관</h3>
+                    <p class="article-excerpt">전화기로 기억하는 시간</p>
+                </a>
+                
+                <!-- Summer Guide -->
+                <a href="./articles/summer-guide.html" class="article-card" data-category="guide">
+                    <div class="article-image">[여름 가이드]</div>
+                    <div class="article-category">GUIDE — 가이드</div>
+                    <h3 class="article-title">Summer Guide</h3>
+                    <p class="article-excerpt">6-8월 여주 캘린더. 조용하지만 그래서 더 좋은 여주의 여름.</p>
+                </a>
+                
+                <!-- Editor's Note -->
+                <a href="./articles/editors-note.html" class="article-card" data-category="note">
+                    <div class="article-image">[편집팀]</div>
+                    <div class="article-category">NOTE — 에디터 노트</div>
+                    <h3 class="article-title">첫 발행을 마치며</h3>
+                    <p class="article-excerpt">완벽하지 않지만, 진심을 담았습니다.</p>
+                </a>
+                
+                <!-- Coming Soon: COVER -->
+                <div class="article-card coming-soon" data-category="cover">
+                    <div class="article-image">[커버스토리]</div>
+                    <div class="article-category">COVER — 커버스토리</div>
+                    <h3 class="article-title">여름, 여주의 물가에서</h3>
+                    <p class="article-excerpt">Coming Soon</p>
+                </div>
+                
+                <!-- Coming Soon: PEOPLE -->
+                <div class="article-card coming-soon" data-category="people">
+                    <div class="article-image">[인물 인터뷰]</div>
+                    <div class="article-category">PEOPLE — 사람</div>
+                    <h3 class="article-title">여주에서 10년</h3>
+                    <p class="article-excerpt">Coming Soon</p>
+                </div>
+                
+                <!-- Coming Soon: TASTE -->
+                <div class="article-card coming-soon" data-category="taste">
+                    <div class="article-image">[맛집]</div>
+                    <div class="article-category">TASTE — 맛</div>
+                    <h3 class="article-title">여름밤을 시원하게</h3>
+                    <p class="article-excerpt">Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">THE LOCAL : YEO-JU</div>
+            <div class="footer-info">
+                Vol. 01 / Summer 2026<br>
+                May — August 2026 / Living Edition<br>
+                <br>
+                Contact: yeoju.magazine@gmail.com<br>
+                Instagram: @yeoju_magazine<br>
+                <br>
+                © 2026 THE LOCAL : YEO-JU. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Header Tab Navigation + Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerTabs = document.querySelectorAll('.header-tab');
+            const articles = document.querySelectorAll('.article-card');
+            
+            headerTabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    const category = this.dataset.category;
+                    
+                    // Update active tab
+                    headerTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // If INTRO, just scroll (anchor link handles it)
+                    if (category === 'intro') {
+                        // Anchor link (#opening) handles scroll
+                        return;
+                    }
+                    
+                    // For other tabs, prevent default and handle manually
+                    e.preventDefault();
+                    
+                    // Scroll to stories section
+                    const storiesSection = document.getElementById('stories');
+                    storiesSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Filter articles after scroll
+                    setTimeout(() => {
+                        articles.forEach(article => {
+                            if (article.dataset.category === category) {
+                                article.classList.remove('hidden');
+                            } else {
+                                article.classList.add('hidden');
+                            }
+                        });
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
