@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PART 3: 추천 코스 — Summer Guide — THE LOCAL : YEO-JU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-green: #6B8E6F;
+            --color-warm-gray: #8B8376;
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        body {
+            font-family: var(--font-korean);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-beige);
+            z-index: 1000;
+            padding: 20px 40px;
+        }
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-modern);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--color-black);
+        }
+        .nav-back {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--color-warm-gray);
+            transition: color 0.3s ease;
+        }
+        .nav-back:hover { color: var(--color-river); }
+        .article-header {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 40px;
+            text-align: center;
+        }
+        .part-number {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-green);
+            margin-bottom: 20px;
+        }
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
+        }
+        .content h4 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 50px 0 25px;
+        }
+        .course-box {
+            background: var(--color-ivory);
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 4px solid var(--color-green);
+            font-family: 'Courier New', monospace;
+            line-height: 2;
+            white-space: pre-line;
+        }
+        .course-label {
+            display: inline-block;
+            background: var(--color-green);
+            color: var(--color-white);
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .part-nav {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .part-nav a {
+            text-decoration: none;
+            color: var(--color-river);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+        .part-nav a:hover { color: var(--color-black); }
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="summer-guide.html" class="nav-logo">SUMMER GUIDE</a>
+            <a href="summer-guide.html" class="nav-back">← Back to Index</a>
+        </div>
+    </nav>
+    
+    <div class="article-header">
+        <div class="part-number">PART 3</div>
+        <h1 class="article-title">추천 코스</h1>
+        <p style="font-size: 18px; color: var(--color-warm-gray); margin-top: 20px;">여주 여름을 즐기는 4가지 방법</p>
+    </div>
+    
+    <div class="content">
+        <h4>코스 1: 강변 힐링 (반나절)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 01</span>
+09:00  세종대왕릉 산책로
+       시원한 아침, 강바람
+
+11:00  신륵사 강변
+       나무 그늘 아래 휴식
+
+13:00  황포돛배 탑승 (선택)
+       또는 강변 카페에서 점심
+
+추천 대상: 여유로운 산책
+소요 시간: 4시간
+</div>
+        
+        <h4>코스 2: 자전거 라이딩 (오전)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 02</span>
+08:00  여주보 대여소
+       자전거 대여
+
+08:30  남한강 자전거길
+       여주보 → 이포보 (15km)
+
+11:00  이포보에서 휴식
+       강변 벤치, 편의점
+
+12:00  귀환 후 점심
+
+추천 대상: 액티비티 좋아하는 분
+소요 시간: 4시간
+난이도: 쉬움
+</div>
+        
+        <h4>코스 3: 출렁다리 & 마켓 (주말, 6월)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 03</span>
+10:00  출렁다리 마켓 도착
+       (6월 주말만 운영)
+
+10:30  마켓 구경
+       로컬 작가 공예품, 디저트
+
+12:00  출렁다리 건너기
+       강 위를 걷는 경험
+
+13:00  근처 맛집에서 점심
+       여주쌀밥 추천
+
+추천 대상: 가족, 커플
+소요 시간: 3-4시간
+</div>
+        
+        <h4>코스 4: 문화 투어 (하루)</h4>
+        
+        <div class="course-box">
+            <span class="course-label">COURSE 04</span>
+10:00  아트뮤지엄 려
+       전시 관람
+
+12:00  점심
+
+14:00  폰박물관
+       전화기 역사 체험
+
+16:00  도자기 관련 장소
+       (여주도자세상 또는 공방)
+
+18:00  신륵사 석양
+
+추천 대상: 문화/예술 관심 있는 분
+소요 시간: 8시간
+</div>
+    </div>
+    
+    <div class="part-nav">
+        <a href="summer-guide-monthly.html">← PART 2: 월별 가이드</a>
+        <a href="summer-guide-tips.html">PART 4: 여행 팁 →</a>
+    </div>
+    
+    <footer>
+        <div class="footer-logo">THE LOCAL : YEO-JU</div>
+        <div style="font-size: 14px; color: var(--color-warm-gray); margin-top: 20px;">
+            Vol. 01 / Summer 2026
+        </div>
+    </footer>
+</body>
+</html>

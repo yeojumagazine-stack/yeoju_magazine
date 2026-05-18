@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명성황후 생가 — THE LOCAL : YEO-JU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-warm-gray: #8B8376;
+            
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-korean);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-beige);
+            z-index: 1000;
+            padding: 20px 40px;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-modern);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--color-black);
+        }
+        
+        .nav-back {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--color-warm-gray);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-back:hover {
+            color: var(--color-river);
+        }
+        
+        /* Article Header */
+        .article-header {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 40px;
+        }
+        
+        .article-category {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-river);
+            margin-bottom: 30px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .article-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--color-warm-gray);
+            margin-bottom: 40px;
+        }
+        
+        .article-meta {
+            font-size: 14px;
+            color: var(--color-warm-gray);
+            padding-top: 30px;
+            border-top: 1px solid var(--color-beige);
+        }
+        
+        /* Article Content */
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
+        }
+        
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            margin: 60px 0 30px;
+        }
+        
+        .article-content h4 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 25px;
+        }
+        
+        .article-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+        
+        .article-image-wrapper {
+            margin: 60px 0;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-credit {
+            font-size: 12px;
+            color: var(--color-warm-gray);
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .info-box {
+            background: var(--color-ivory);
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 4px solid var(--color-river);
+        }
+        
+        .info-box strong {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: var(--color-river);
+            margin: 60px auto;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 60px 0;
+        }
+        
+        .tag {
+            font-size: 13px;
+            padding: 8px 16px;
+            background: var(--color-ivory);
+            color: var(--color-warm-gray);
+            border-radius: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav {
+            margin: 40px 0;
+        }
+        
+        .footer-nav a {
+            color: var(--color-warm-gray);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--color-river);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .article-header,
+            .article-content {
+                padding: 0 20px;
+            }
+            
+            .article-header {
+                margin: 100px auto 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="../magazine-home.html" class="nav-logo">THE LOCAL : YEO-JU</a>
+            <a href="../magazine-home.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+    
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="article-category">PLACE — 장소</div>
+        <h1 class="article-title">명성황후 생가</h1>
+        <p class="article-subtitle">역사를 마주하는 공간</p>
+        <div class="article-meta">
+            THE LOCAL : YEO-JU · 2026년 5월
+        </div>
+    </div>
+    
+    <!-- Article Content -->
+    <div class="article-content">
+        <h3>도입</h3>
+        
+        <p>여주시 능현동. 녹음 속에 한옥이 자리하고 있다.</p>
+        
+        <p>명성황후 생가.</p>
+        
+        <p>1851년, 민치록의 딸로 태어나 1866년 왕비가 된 사람. 1895년, 경복궁에서 시해된 사람. 한국 근대사의 소용돌이 한가운데 있었던 사람.</p>
+        
+        <p>좋다 나쁘다를 떠나, 여주가 그의 출생지라는 건 역사적 사실이다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>공간</h3>
+        
+        <div class="article-image-wrapper">
+            <img src="https://i.imgur.com/cBxklY9.jpeg" alt="명성황후 생가 전경" class="article-image">
+            <div class="image-credit">ⓒ한국관광공사 포토코리아-김지호</div>
+        </div>
+        
+        <p>입구에서 보이는 건 정갈하게 정돈된 한옥과 넓은 잔디마당이다. 주변은 온통 녹음. 도심에서 멀리 떨어진, 조용한 곳.</p>
+        
+        <p>원래 생가는 1687년 지어졌고, 1850년대 증축되었다고 한다. 현재 건물은 복원한 것이다. 1992년 사적으로 지정되었다.</p>
+        
+        <div class="article-image-wrapper">
+            <img src="https://i.imgur.com/IZDx3HT.jpeg" alt="명성황후생가지 추모비" class="article-image">
+            <div class="image-credit">ⓒ한국관광공사 포토코리아-김지호</div>
+        </div>
+        
+        <p>입구의 추모비. "명성황후 추모비".</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>전시</h3>
+        
+        <div class="article-image-wrapper">
+            <img src="https://i.imgur.com/D79kWYT.jpeg" alt="명성황후 생가 내부 전시" class="article-image">
+            <div class="image-credit">ⓒ한국관광공사 포토코리아-김지호</div>
+        </div>
+        
+        <p>내부 전시관에는 명성황후와 그의 아버지 민치록의 초상이 걸려 있다. 벽면에는 학과 봉황이 그려져 있다.</p>
+        
+        <p>전시 내용은 생가 구조, 왕비 책봉 과정, 당시 시대 상황 등을 다룬다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>역사적 사실</h3>
+        
+        <p>명성황후(1851-1895).</p>
+        
+        <div class="info-box">
+            • 1851년 여주에서 출생<br>
+            • 1866년 고종의 왕비로 책봉<br>
+            • 1873년부터 정치에 관여<br>
+            • 1895년 을미사변으로 시해
+        </div>
+        
+        <p>역사 교과서에 나오는 내용이다. 하지만 그의 정치적 행보에 대한 평가는 지금도 엇갈린다.</p>
+        
+        <p>어떤 이는 "구국의 여걸"이라 하고, 어떤 이는 "당쟁의 화근"이라 한다. 어떤 이는 "개혁을 막은 보수"라 하고, 어떤 이는 "외세에 맞선 인물"이라 한다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>중립적 시선</h3>
+        
+        <div class="article-image-wrapper">
+            <img src="https://i.imgur.com/rpUH0uq.jpeg" alt="명성황후 생가 정문" class="article-image">
+            <div class="image-credit">ⓒ한국관광공사 포토코리아-김지호</div>
+        </div>
+        
+        <p>생가를 걸으며 드는 생각.</p>
+        
+        <p>역사적 인물을 평가하는 건 각자의 몫이다. 좋아할 수도, 싫어할 수도 있다. 그건 개인의 해석이다.</p>
+        
+        <p>다만 이곳은 "여주에서 태어난 사람이 왕비가 되고, 근대사의 중심에 섰다"는 역사적 사실을 보여주는 공간이다.</p>
+        
+        <p>평가는 뒤로 미루고, 일단 마주한다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>방문 정보</h3>
+        
+        <div class="info-box">
+            <strong>📍 위치</strong>
+            경기도 여주시 능현동 명성로 71<br>
+            <br>
+            <strong>🕐 운영 시간</strong>
+            3-10월: 09:00-18:00<br>
+            11-2월: 09:00-17:00<br>
+            월요일 휴관<br>
+            <br>
+            <strong>🎫 입장료</strong>
+            무료<br>
+            <br>
+            <strong>🚗 주차</strong>
+            경차 500원 / 소형차(15인승 이하) 1,000원 / 중·대형차(16인승 이상) 2,000원<br>
+            ※ 무료 — 여주시민 (주민등록증 제시 필수)
+        </div>
+        
+        <h4>주변 코스</h4>
+        
+        <p>명성황후 생가 → 세종대왕릉 (차로 10분) → 신륵사 (차로 15분)</p>
+        
+        <p>여주의 역사적 장소들을 함께 둘러보기 좋은 코스.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h3>마무리</h3>
+        
+        <p>명성황후 생가를 나서며.</p>
+        
+        <p>역사는 사실의 기록이고, 동시에 해석의 영역이다.</p>
+        
+        <p>좋아할 수도, 비판할 수도 있다. 그게 역사를 대하는 자유다.</p>
+        
+        <p>다만 이곳에 오면, 한 가지는 확실해진다.</p>
+        
+        <p>여주는 한국 근대사의 한 장면이 시작된 곳이라는 것.</p>
+        
+        <p>그 의미를 어떻게 받아들일지는, 각자의 몫이다.</p>
+        
+        <div class="decorative-line"></div>
+        
+        <h4>주의사항</h4>
+        
+        <div class="info-box">
+            • 전시관 내부 사진 촬영 가능 (플래시 금지)<br>
+            • 한옥 내부 일부는 보존을 위해 출입 제한<br>
+            • 조용한 관람 권장
+        </div>
+        
+        <h4>추천 방문 시기</h4>
+        
+        <div class="info-box">
+            • 봄(4-5월): 주변 녹음이 아름다움<br>
+            • 가을(9-10월): 단풍과 함께
+        </div>
+        
+        <h4>소요 시간</h4>
+        
+        <p>약 1시간</p>
+        
+        <div class="tags">
+            <span class="tag">#명성황후생가</span>
+            <span class="tag">#여주명소</span>
+            <span class="tag">#역사유적</span>
+            <span class="tag">#한옥</span>
+            <span class="tag">#근대사</span>
+        </div>
+        
+        <p style="font-size: 14px; color: var(--color-warm-gray); margin-top: 60px;">
+            정보 출처: 여주시청 문화관광 · 문화재청<br>
+            취재: THE LOCAL : YEO-JU<br>
+            2026년 5월
+        </p>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">THE LOCAL : YEO-JU</div>
+            <div class="footer-nav">
+                <a href="../magazine-home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div style="font-size: 14px; color: var(--color-warm-gray); margin-top: 30px;">
+                Vol. 01 / Summer 2026<br>
+                © 2026 THE LOCAL : YEO-JU
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

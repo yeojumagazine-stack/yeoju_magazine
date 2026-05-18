@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PART 1: 소개글 — Summer Guide — THE LOCAL : YEO-JU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-green: #6B8E6F;
+            --color-warm-gray: #8B8376;
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-korean);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-beige);
+            z-index: 1000;
+            padding: 20px 40px;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-modern);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--color-black);
+        }
+        
+        .nav-back {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--color-warm-gray);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-back:hover { color: var(--color-river); }
+        
+        .article-header {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 40px;
+            text-align: center;
+        }
+        
+        .part-number {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-green);
+            margin-bottom: 20px;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
+        }
+        
+        .content p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+        
+        .part-nav {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .part-nav a {
+            text-decoration: none;
+            color: var(--color-river);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+        
+        .part-nav a:hover { color: var(--color-black); }
+        
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="summer-guide.html" class="nav-logo">SUMMER GUIDE</a>
+            <a href="summer-guide.html" class="nav-back">← Back to Index</a>
+        </div>
+    </nav>
+    
+    <div class="article-header">
+        <div class="part-number">PART 1</div>
+        <h1 class="article-title">여름 여주,<br>조용하지만 좋다</h1>
+    </div>
+    
+    <div class="content">
+        <p style="font-size: 20px; font-weight: 500;">여름의 여주는 조용하다.</p>
+        
+        <p>봄의 도자기축제, 가을의 오곡나루축제처럼 북적이는 대형 행사는 없다. 하지만 그래서 더 좋다. 여름의 여주는 남한강과 자연을 온전히 누릴 수 있는 계절이다.</p>
+        
+        <p>6월부터 8월까지, 여주는 강바람과 녹음, 그리고 여유로운 시간을 선물한다.</p>
+    </div>
+    
+    <div class="part-nav">
+        <a href="summer-guide.html">← 목차로</a>
+        <a href="summer-guide-monthly.html">PART 2: 월별 가이드 →</a>
+    </div>
+    
+    <footer>
+        <div class="footer-logo">THE LOCAL : YEO-JU</div>
+        <div style="font-size: 14px; color: var(--color-warm-gray); margin-top: 20px;">
+            Vol. 01 / Summer 2026
+        </div>
+    </footer>
+</body>
+</html>

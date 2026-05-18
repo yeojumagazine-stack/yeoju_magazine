@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PART 4: 여행 팁 — Summer Guide — THE LOCAL : YEO-JU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --color-black: #1a1a1a;
+            --color-white: #FFFFFF;
+            --color-ivory: #F5F1E8;
+            --color-beige: #E8DCC4;
+            --color-river: #4A7C8C;
+            --color-green: #6B8E6F;
+            --color-warm-gray: #8B8376;
+            --font-display: 'Playfair Display', serif;
+            --font-modern: 'Space Grotesk', sans-serif;
+            --font-korean: 'Noto Sans KR', sans-serif;
+        }
+        body {
+            font-family: var(--font-korean);
+            line-height: 1.8;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-beige);
+            z-index: 1000;
+            padding: 20px 40px;
+        }
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-modern);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: var(--color-black);
+        }
+        .nav-back {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--color-warm-gray);
+            transition: color 0.3s ease;
+        }
+        .nav-back:hover { color: var(--color-river); }
+        .article-header {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 40px;
+            text-align: center;
+        }
+        .part-number {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--color-river);
+            margin-bottom: 20px;
+        }
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
+        }
+        .content h4 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 25px;
+        }
+        .info-box {
+            background: var(--color-ivory);
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 4px solid var(--color-river);
+            line-height: 2;
+        }
+        .part-nav {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .part-nav a {
+            text-decoration: none;
+            color: var(--color-river);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+        .part-nav a:hover { color: var(--color-black); }
+        footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="summer-guide.html" class="nav-logo">SUMMER GUIDE</a>
+            <a href="summer-guide.html" class="nav-back">← Back to Index</a>
+        </div>
+    </nav>
+    
+    <div class="article-header">
+        <div class="part-number">PART 4</div>
+        <h1 class="article-title">여행 팁</h1>
+        <p style="font-size: 18px; color: var(--color-warm-gray); margin-top: 20px;">알아두면 유용한 정보</p>
+    </div>
+    
+    <div class="content">
+        <h4>피서 전략</h4>
+        <div class="info-box">
+            • 한낮 (12-15시)은 피하고 아침/저녁 활용<br>
+            • 강변은 언제나 시원함<br>
+            • 실내 박물관/미술관 더위 피하기 좋음
+        </div>
+        
+        <h4>이동</h4>
+        <div class="info-box">
+            • 자전거 대여: 여주보, 이포보<br>
+            • 주차: 주요 관광지 무료 주차장 多<br>
+            • 대중교통: 여주역 기점, 시내버스 이용
+        </div>
+        
+        <h4>준비물</h4>
+        <div class="info-box">
+            • 선크림, 모자, 선글라스<br>
+            • 물병 (자전거길엔 편의점 적음)<br>
+            • 간편한 운동화
+        </div>
+        
+        <h4>먹거리</h4>
+        <div class="info-box">
+            • 여주쌀밥 정식<br>
+            • 출렁다리 마켓 디저트 (6월 주말)<br>
+            • 강변 카페
+        </div>
+        
+        <p style="font-size: 14px; color: var(--color-warm-gray); margin-top: 60px;">
+            정보 출처: 여주세종문화관광재단 · THE LOCAL : YEO-JU 자체 취재<br>
+            최종 업데이트: 2026년 5월
+        </p>
+    </div>
+    
+    <div class="part-nav">
+        <a href="summer-guide-courses.html">← PART 3: 추천 코스</a>
+        <a href="summer-guide.html">목차로 →</a>
+    </div>
+    
+    <footer>
+        <div class="footer-logo">THE LOCAL : YEO-JU</div>
+        <div style="font-size: 14px; color: var(--color-warm-gray); margin-top: 20px;">
+            Vol. 01 / Summer 2026
+        </div>
+    </footer>
+</body>
+</html>
