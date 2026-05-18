@@ -282,6 +282,24 @@
             border: 1px solid var(--color-beige);
             margin-bottom: 20px;
         }
+
+        .article-image-wrapper {
+            margin: 60px 0;
+        }
+
+        .article-image-wrapper .article-image {
+            height: auto;
+            display: block;
+            margin-bottom: 0;
+        }
+
+        .image-credit {
+            font-size: 12px;
+            color: var(--color-warm-gray);
+            margin-top: 6px;
+            text-align: center;
+            font-style: italic;
+        }
         
         .article-category {
             font-size: 11px;
@@ -413,7 +431,7 @@
             <a href="#stories" class="header-tab" data-category="place">PLACE</a>
             <a href="#stories" class="header-tab" data-category="people">PEOPLE</a>
             <a href="#stories" class="header-tab" data-category="taste">TASTE</a>
-            <a href="#stories" class="header-tab" data-category="guide">GUIDE</a>
+            <a href="./articles/summer-guide.html" class="header-tab" data-category="guide">GUIDE</a>
             <a href="#stories" class="header-tab" data-category="note">NOTE</a>
         </div>
     </header>
@@ -429,17 +447,10 @@
                 </div>
                 
                 <div style="font-size: 18px; line-height: 2; color: var(--color-black);">
-                        
-    <!-- Article Content -->
-    <div class="article-content">
-        <div class="article-image-wrapper">
-    <img src="https://i.imgur.com/r6jYWfZ.jpeg" 
-         alt="여주 신륵사" 
-         class="article-image">
-    <div class="image-credit">
-        ⓒ한국관광공사 포토코리아-김지호
-    </div>
-</div>
+                    <div class="article-image-wrapper">
+                        <img src="https://i.imgur.com/r6jYWfZ.jpeg" alt="여주 신륵사" class="article-image">
+                        <div class="image-credit">ⓒ한국관광공사 포토코리아-김지호</div>
+                    </div>
                     <p style="margin-bottom: 30px;">여주는 빠르게 변하고 있습니다.</p>
                     
                     <p style="margin-bottom: 30px;">새로운 카페가 생기고, 젊은 예술가들이 모이고, 오래된 가게들은 새로운 세대에게 이어집니다. 관광객들은 늘어나고, 지역은 조금씩 새로운 모습을 갖춰갑니다.</p>
@@ -455,7 +466,15 @@
                     <p style="margin-bottom: 30px;">완벽하지 않을 수 있습니다. 하지만 진심을 담았습니다.</p>
                     
                     <p style="margin-bottom: 30px;">여주를 사랑하는 마음으로, THE LOCAL : YEO-JU의 첫 번째 이야기를 시작합니다.</p>
-                    
+
+                    <div style="width: 60px; height: 2px; background: var(--color-river); margin: 60px auto;"></div>
+
+                    <p style="margin-bottom: 30px;">이 매거진은 한 번에 완성되지 않습니다.</p>
+
+                    <p style="margin-bottom: 30px;">5월의 이야기로 문을 열고, 6월, 7월, 8월의 이야기들이 하나씩 더해질 것입니다. 계절이 흐르는 것처럼, 기록도 함께 흘러갑니다. Vol. 01은 여름이 끝날 때까지 살아 있는 매거진입니다.</p>
+
+                    <p style="margin-bottom: 30px;">9월, 가을이 오면 Vol. 02가 시작됩니다.</p>
+
                     <div style="text-align: center; margin-top: 60px; font-weight: 500; color: var(--color-warm-gray);">
                         THE LOCAL : YEO-JU 편집팀<br>2026년 5월
                     </div>
@@ -509,7 +528,7 @@
                     <div class="article-image">[커버스토리]</div>
                     <div class="article-category">COVER — 커버스토리</div>
                     <h3 class="article-title">여름, 여주의 물가에서</h3>
-                    <p class="article-excerpt">Coming Soon</p>
+                    <p class="article-excerpt">6월 업데이트 예정</p>
                 </div>
                 
                 <!-- 굽당 인터뷰 -->
@@ -525,7 +544,7 @@
                     <div class="article-image">[맛집]</div>
                     <div class="article-category">TASTE — 맛</div>
                     <h3 class="article-title">여름밤을 시원하게</h3>
-                    <p class="article-excerpt">Coming Soon</p>
+                    <p class="article-excerpt">7월 업데이트 예정</p>
                 </div>
             </div>
         </div>
@@ -536,8 +555,8 @@
         <div class="footer-content">
             <div class="footer-logo">THE LOCAL : YEO-JU</div>
             <div class="footer-info">
-                Vol. 01 / Summer 2026<br>
-                May — August 2026 / Living Edition<br>
+                Vol. 01 / Summer 2026 — 5월 오픈, 6월·7월·8월 순차 업데이트<br>
+                Vol. 02 / Autumn 2026 — 9월 발간 예정<br>
                 <br>
                 Contact: yeoju.magazine@gmail.com<br>
                 Instagram: @yeoju_magazine<br>
@@ -561,9 +580,8 @@
                     headerTabs.forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // If INTRO, just scroll (anchor link handles it)
-                    if (category === 'intro') {
-                        // Anchor link (#opening) handles scroll
+                    // If INTRO or GUIDE, let the anchor/href handle navigation
+                    if (category === 'intro' || category === 'guide') {
                         return;
                     }
                     
